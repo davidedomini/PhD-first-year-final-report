@@ -3,6 +3,13 @@
 % Version 2.21 of 2022/01/12
 %
 \documentclass[runningheads]{llncs}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
+
+% \usepackage{fontspec}
 %
 \usepackage[T1]{fontenc}
 % T1 fonts will be used to generate the final print and online PDFs,
@@ -18,90 +25,228 @@
 %\usepackage{color}
 %\renewcommand\UrlFont{\color{blue}\rmfamily}
 %
-\begin{document}
-%
-\title{PhD First Year Final Report}
-%
-%\titlerunning{Abbreviated paper title}
-% If the paper title is too long for the running head, you can set
-% an abbreviated paper title here
-%
-\author{Davide Domini}
-%
-% \authorrunning{F. Author et al.}
-% First names are abbreviated in the running head.
-% If there are more than two authors, 'et al.' is used.
-%
-\institute{University of Bologna
-\email{davide.domini@unibo.it}\\}
-%
-\maketitle              % typeset the header of the contribution
-%
-% \begin{abstract}
-% The abstract should briefly summarize the contents of the paper in
-% 150--250 words.
 
-% \keywords{First keyword  \and Second keyword \and Another keyword.}
-% \end{abstract}
-%
-%
-%
-\section{Commission}
-\begin{enumerate}
-    \item Prof. Mirko Viroli
-    \item Prof. Danilo Pianini
-    \item Prof. Matteo Ferrara
-\end{enumerate}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\scshape\Large PhD Programme in Computer Science and Engineering \par}
+    \vspace{0.5cm}
+    {\scshape\large Cycle XXXIX \par}
+    \vspace{0.5cm}
+
+    \rule{\linewidth}{0.4mm} \\ [0.1mm]
+    \raisebox{0.2cm}{\rule{\linewidth}{0.8mm}} \\[0.8cm]
+    {\huge\bfseries PhD First Year -- Final Report \par}
+    \vspace{0.8cm}
+    \rule{\linewidth}{0.8mm} \\ [0.1pt]
+    \raisebox{0.2cm}{\rule{\linewidth}{0.4mm}} \\[1.5cm]
+    
+    % {\Large PhD First Year -- Final Report \par}
+
+    \vspace{1.5cm}
+    
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \raggedright
+        \textbf{Commission:}\\[0.5cm]
+        Prof. Mirko Viroli\\
+        Prof. Danilo Pianini\\
+        Prof. Matteo Ferrara
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \raggedleft
+        \textbf{PhD Student:}\\[0.5cm]
+        Davide Domini
+    \end{minipage}
+    
+    \vfill
+    
+\end{titlepage}
+
 
 \section{Pubblications}
 List of published (or already accepted) papers:
 \begin{enumerate}
-    \item ScaRLib: A Framework for Cooperative Many Agent Deep Reinforcement Learning in Scala~\cite{DBLP:conf/coordination/DominiCAV23}
-    \item Field-Based Coordination for Federated Learning~\cite{DBLP:conf/coordination/DominiAEV24}
-    \item ScaRLib: Towards a hybrid toolchain for aggregate computing and many-agent reinforcement learning~\cite{DBLP:journals/scp/DominiCAV24}
-    \item Towards Intelligent Pulverized Systems: a Modern Approach for Edge-Cloud Services~\cite{DBLP:conf/woa/DominiFAV24}
-    \item Proximity-based Self-Federated Learning~\cite{DBLP:conf/acsos/DominiFAVE24}
-    \item Towards Self-Adaptive Cooperative Learning in Collective Systems~\cite{DBLP:conf/acsos/Domini24}
-    \item A Reusable Simulation Pipeline for Many-Agent Reinforcement Learning~\cite{DBLP:conf/dsrt/DominiAPV24}
+    \item \emph{ScaRLib: A Framework for Cooperative Many Agent Deep Reinforcement Learning in Scala}~\cite{DBLP:conf/coordination/DominiCAV23} \\
+    \textbf{Abstract: }
+    Multi Agent Reinforcement Learning (MARL) is an emerging field in machine learning where multiple agents learn, simultaneously and in a shared environment, 
+     how to optimise a global or local reward signal. MARL has gained significant interest in recent years due to its successful applications in various domains,
+     such as robotics, IoT, and traffic control. Cooperative Many Agent Reinforcement Learning (CMARL) is a relevant subclass of MARL, where thousands of 
+     agents work together to achieve a common coordination goal.
+    %
+    In this paper, we introduce ScaRLib, a Scala framework relying on state-of-the-art deep learning libraries to support the development of CMARL systems. 
+    %
+    The framework supports the specification of centralised training and decentralised execution, and it is designed to be easily extensible, allowing to add new 
+     algorithms, new types of environments, and new coordination toolchains.
+    %
+    This paper describes the main structure and features of ScaRLib and includes basic demonstrations that showcase binding with one such toolchain: 
+     ScaFi programming framework and Alchemist simulator can be exploited to enable learning of field-based coordination policies for large-scale systems.
+    %
+    \item \emph{Field-Based Coordination for Federated Learning}~\cite{DBLP:conf/coordination/DominiAEV24} \\
+    \textbf{Abstract: }
+    Federated Learning has gained increasing interest in the last years, as it allows the training of machine learning models with a large number of devices 
+     by exchanging only the weights of the trained neural networks. 
+    % 
+    Without the need to upload the training data to a central server, privacy concerns and potential bottlenecks can be removed as fewer data is transmitted. 
+    %
+    However, the current state-of-the-art solutions are typically centralized, and do not provide for suitable coordination mechanisms to take into account 
+     spatial distribution of devices and local communications, which can sometimes play a crucial role. 
+    % 
+    Therefore, we propose a field-based coordination approach for federated learning, where the devices coordinate with each other through the use of 
+     computational fields. 
+    %
+    We show that this approach can be used to train models in a completely peer-to-peer fashion. 
+    %
+    Additionally, our approach also allows for emergently create zones of interests, and produce specialized models for each zone enabling each agent 
+     to refine their models for the tasks at hand.
+    %
+    We evaluate our approach in a simulated environment leveraging aggregate computing—the reference global-to-local field-based coordination programming paradigm. 
+    %
+    The results show that our approach is comparable to the state-of-the-art centralized solutions, while enabling a more flexible and scalable approach 
+     to federated learning.
+    \item \emph{ScaRLib: Towards a hybrid toolchain for aggregate computing and many-agent reinforcement learning}~\cite{DBLP:journals/scp/DominiCAV24} \\
+    \textbf{Abstract: }
+    This article introduces ScaRLib, a Scala-based framework that aims to streamline the development cyber-physical swarms scenarios 
+     (i.e., systems of many interacting distributed devices that collectively accomplish system-wide tasks) by integrating macroprogramming and multi-agent 
+     reinforcement learning to design collective behavior. 
+    %
+     This framework serves as the starting point for a broader toolchain that will integrate these two approaches at multiple points to harness the 
+     capabilities of both, enabling the expression of complex and adaptive collective behavior.
+
+    \item \emph{Towards Intelligent Pulverized Systems: a Modern Approach for Edge-Cloud Services}~\cite{DBLP:conf/woa/DominiFAV24} \\
+    \textbf{Abstract: }
+    Emerging trends are leveraging the potential of the edge-cloud continuum to foster the creation of smart services capable of adapting to the 
+     dynamic nature of modern computing landscapes. 
+    %
+     This adaptation is achievable through two primary methods: by leveraging the underlying architecture to refine machine learning algorithms, 
+      and by implementing machine learning algorithms to optimize the distribution of resources and services intelligently. 
+    %  
+    This paper explores the latter approach, focusing on recent advancements in pulverized architecture, collective intelligence, and many-agent 
+     reinforcement learning systems. 
+    %
+    This novel trend, which we refer to as intelligent pulverized system (IPS), aims to create a new generation of services that can adapt to the 
+     complex and dynamic nature of the edge-cloud continuum. Our proposed learning framework integrates many-agent reinforcement learning, graph neural 
+     networks, and aggregate computing to create intelligent services tailored for this environment. 
+    %
+    We discuss the application of this framework across different levels of the pulverization model, illustrating its potential to enhance 
+     the adaptability and efficiency of services within the edge-cloud continuum.
+    \item \emph{Proximity-based Self-Federated Learning}~\cite{DBLP:conf/acsos/DominiFAVE24} \\
+    \textbf{Abstract: }
+    In recent advancements in machine learning, federated learning allows a network of distributed clients to collaboratively develop a global model 
+     without needing to share their local data. 
+    %
+    This technique aims to safeguard privacy, countering the vulnerabilities of conventional centralized learning methods. 
+    %
+    Traditional federated learning approaches often rely on a central server to coordinate model training across clients, aiming to replicate 
+     the same model uniformly across all nodes. 
+    %
+    However, these methods overlook the significance of geographical and local data variances in vast networks, potentially affecting model 
+     effectiveness and applicability. 
+    % 
+    Moreover, relying on a central server might become a bottleneck in large networks, such as the ones promoted by edge computing. 
+    %
+    Our paper introduces a novel, fully-distributed federated learning strategy called proximity-based self-federated learning that enables 
+     the self-organised creation of multiple federations of clients based on their geographic proximity and data distribution without 
+     exchanging raw data.
+    %
+    Indeed, unlike traditional algorithms, our approach encourages clients to share and adjust their models with neighbouring nodes based on geographic 
+     proximity and model accuracy. 
+    %
+    This method not only addresses the limitations posed by diverse data distributions but also enhances the model's adaptability to different regional 
+     characteristics creating specialized models for each federation. We demonstrate the efficacy of our approach through simulations on 
+     well-known datasets, showcasing its effectiveness over the conventional centralized federated learning framework.
+
+    \item \emph{Towards Self-Adaptive Cooperative Learning in Collective Systems}~\cite{DBLP:conf/acsos/Domini24} \\
+    \textbf{Abstract: }
+    Nowadays, collective adaptive systems have become crucial as modern systems increasingly adopt this vision.
+    %
+    These systems can be leveraged as a means to facilitate cooperative adaptive learning.
+    %
+    However, implementing such systems presents various challenges, including:
+     scalability, failures, non-iid data and complex architectures.
+    %
+    This paper presents a modern approach to cooperative and privacy-resilient learning by leveraging macroprogramming.
+    %
+    Specifically, we propose a new framework based on the integration of aggregate computing and federated learning,
+     aiming to address these challenges and enhance the effectiveness and security of cooperative learning systems.
+
+    \item \emph{A Reusable Simulation Pipeline for Many-Agent Reinforcement Learning}~\cite{DBLP:conf/dsrt/DominiAPV24} \\
+    \textbf{Abstract: }
+    Recent advancements in multi-agent reinforcement learning led to systems in which large groups of agents
+     work together to learn shared policies and achieve collective behavior.
+    %
+    This approach is increasingly important for many applications,
+     including swarm robotics, crowd sensing, and large-scale IoT networks.
+    %
+    In fact, these systems require repeated experimentation to learn from experience:
+     simulation becomes thus essential, as deploying and testing in real-world environments incurs in high costs and practical challenges.
+    %
+    In response to this need, our paper introduces a simulation-based pipeline to gather the necessary experience for many-agent learning.
+    %
+    We highlight the requirements of such pipeline and the role of simulation, presenting also a practical prototype implemented in Alchemist,
+     a simulator designed for very large-scale systems.
+    %
+    This pipeline provides a scalable, modular, and flexible environment for developing and testing many-agent reinforcement learning strategies.
 \end{enumerate}
 
-\section{Conferences}
+\section{Attended Conferences and Workshops}
 \begin{enumerate}
-    \item Coordination Models and Languages - 26th International Conference, COORDINATION 2024, Held as Part of the 19th International Federated Conference on Distributed Computing Techniques, DisCoTec 2024, Groningen, The Netherlands, June 17-21, 2024
-    \item 25th Workshop "From Objects to Agents", Bard (Aosta), Italy, July 8-10, 2024
-    \item IEEE International Conference on Autonomic Computing and Self-Organizing Systems, ACSOS 2024, Aarhus, Denmark, September 16-20 2024
-    \item 28th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2024), Urbino, Italy, October 7-9 2024
+    \item \textbf{Coordination Models and Languages} - 26th International Conference, COORDINATION 2024, Held as Part of the 19th International Federated Conference on Distributed Computing Techniques, DisCoTec 2024, Groningen, The Netherlands, June 17-21, 2024
+    \item \textbf{25th Workshop "From Objects to Agents"}, Bard (Aosta), Italy, July 8-10, 2024
+    \item \textbf{IEEE International Conference on Autonomic Computing and Self-Organizing Systems}, ACSOS 2024, Aarhus, Denmark, September 16-20 2024
+    \item \textbf{11th Workshop on Self-Improving Systems Integration}, SISSY 2024, Held as Part of ACSOS 2024, Aarhus, Denmark, September 16-20 2024
+    \item \textbf{2nd International Workshop on Artificial Intelligence for Autonomous computing Systems}, AI4AS 2024, Held as Part of ACSOS 2024, Aarhus, Denmark, September 16-20 2024
+    \item \textbf{28th International Symposium on Distributed Simulation and Real Time Applications}, DS-RT 2024, Urbino, Italy, October 7-9 2024
 \end{enumerate}
 
 \section{Doctoral Schools}
 \begin{enumerate}
-    \item Bertionoro International Spring School 2024
+    \item \textbf{Bertionoro International Spring School 2024}, BISS 2024, Bertinoro, Italy, March 11-15 ,2024
 \end{enumerate}
 
 \section{Teaching Tutor}
 \begin{enumerate}
-    \item Machine Learning Systems for Data Science - Statistical Science Bachelor Degree
-    \item Software Engineering (Modulo 1) - Digital Transformation Management Master Degree
+    \item \textbf{Machine Learning Systems for Data Science} - Statistical Science Bachelor Degree
+    \item \textbf{Software Engineering (Modulo 1)} - Digital Transformation Management Master Degree
 \end{enumerate}
 
 \section{PhD Courses}
 
 \begin{enumerate}
-    \item BISS 2024 - Bertinoro International Spring School - Program Analysis
+    \item \textbf{BISS 2024 - Bertinoro International Spring School - Program Analysis}
     \begin{itemize}
         \item Prof: Roberta Gori, Roberto Bruni  - Università di Pisa
         \item Proposed CFU: 4 (12 hours) 
         \item Period: March 2024
         \item Exam: Not done, CFUs without evaluation
     \end{itemize}    
-    \item  Risk Assessment of ML for Cybersecurity
+    \item \textbf{BISS 2024 - Bertinoro International Spring School - Graph Neural Networks}
+    \begin{itemize}
+        \item Prof: Fabrizio Silvestri - Sapienza Università di Roma
+        \item Proposed CFU: 4 (12 hours) 
+        \item Period: March 2024
+        \item Exam: Done
+    \end{itemize}  
+    \item \textbf{BISS 2024 - Bertinoro International Spring School - Large Language Models}
+    \begin{itemize}
+        \item Prof: Danilo Croce - University of Roma, Tor Vergata
+        \item Proposed CFU: 4 (12 hours) 
+        \item Period: March 2024
+        \item Exam: Done
+    \end{itemize}  
+    \item \textbf{Risk Assessment of ML for Cybersecurity}
     \begin{itemize}
         \item Fabio Pierazzi - King's College London
         \item Proposed CFU: 5 (20 hours) 
         \item Period: April 2024
         \item Exam: Done
     \end{itemize}    
-    \item Introduction to Complex Systems science   
+    \item \textbf{Introduction to Complex Systems Science} 
     \begin{itemize}
         \item Prof: Andrea Roli - Università di Bologna      
         \item Proposed CFU: 2 (10 hours) 
@@ -116,7 +261,7 @@ List of published (or already accepted) papers:
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
-\bibliographystyle{splncs04}
+\bibliographystyle{alpha}
 \bibliography{mybibliography}
 %
 % \begin{thebibliography}{8}
